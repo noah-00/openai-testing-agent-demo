@@ -1,6 +1,9 @@
+import dotenv from "dotenv";
 import http from "http";
 import { Server as SocketIOServer, Socket } from "socket.io";
 
+// Load environment variables first
+dotenv.config({ path: '.env.development' });
 import { handleTestCaseInitiated } from "./handlers/test-case-initiation-handler";
 import { handleSocketMessage } from "./handlers/user-messages-handler";
 import { testCaseUpdateHandler } from "./handlers/test-case-update-handler";
